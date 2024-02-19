@@ -1,0 +1,50 @@
+==================
+Let statements
+==================
+
+let five = 5;
+let ten = 10;
+
+---
+
+(source_file
+    (let_statement
+        Name: (identifier)
+        Value: (number))
+    (let_statement
+        Name: (identifier)
+        Value: (number)))
+
+
+====================
+Let statements work without ending ;
+====================
+
+let five = 5
+let ten = 10
+
+---
+
+(source_file
+    (let_statement
+        Name: (identifier)
+        Value: (number))
+    (let_statement
+        Name: (identifier)
+        Value: (number)))
+
+=========
+Let statements followed by expression
+=========
+let x = 5;
+x + 10;
+
+---
+(source_file
+    (let_statement
+        (identifier)
+        (number))
+    (expression
+        (identifier)
+        (plus)
+        (number)))

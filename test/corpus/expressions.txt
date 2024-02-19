@@ -1,0 +1,80 @@
+=====
+Prefix
+====
+
+-5
+!true
+!false
+
+-----
+(source_file)
+        
+
+======
+Binary operations / infix
+====
+5 + 5
+5 - 5
+5 / 5
+5 * 5
+
+----
+(source_file)
+
+
+=====
+Comparisons
+=====
+foo == bar
+foo != bar
+foo < bar
+foo > bar
+
+-----
+(source_file)
+
+
+====
+Call expressions
+====
+add(2, 3)
+add(add(2,3), add(5,10))
+max(5, add(5, (5 * 5)))
+
+-----
+(source_file)
+
+
+=====
+Identifiers are expressions
+=====
+
+foo * bar / foobar
+add(foo, bar)
+
+
+----
+(source_file)
+
+=====
+Functions as expressions
+=====
+let add = fn(x,y) {
+    return x + y
+};
+
+----
+(source_file)
+
+
+=====
+Function literals as identifiers
+=====
+
+fn(x, y) {
+    return x + y;
+}(5, 5)
+(fn(x) { return x}(5) + 10) * 10
+
+-----
+(source_file)
