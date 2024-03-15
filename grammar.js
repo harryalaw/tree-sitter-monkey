@@ -76,6 +76,19 @@ module.exports = grammar({
             $.true,
             $.false,
             $.parenthesized_expression,
+            $.if_expression,
+        ),
+
+        if_expression: ($) => seq(
+            'if',
+            '(',
+            field('condition', $._expression),
+            ')',
+            field('consequence', $.block_statement),
+            optional(seq(
+                'else',
+                field('alternative', $.block_statement)
+            ))
         ),
 
         prefix_expression: ($) => prec(PREC.PREFIX, seq(

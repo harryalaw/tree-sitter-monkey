@@ -1,0 +1,64 @@
+====
+Fibonacci benchmark
+====
+let fibonacci = fn(x) {
+    if (x == 0) {
+        return 0;
+    } else {
+        if (x == 1) {
+            return 1;
+        } else {
+            fibonacci(x - 1) + fibonacci(x - 2)
+        }
+    }
+}
+fibonacci(35);
+
+
+---
+(source_file
+    (let_statement
+        name: (identifier)
+        value: (function_literal
+            parameters: (parameter_list
+                (parameter_declaration
+                    name: (identifier)))
+            body: (block_statement
+                (expression_statement
+                    (if_expression
+                        condition: (binary_expression
+                            left: (identifier)
+                            right: (number))
+                        consequence: (block_statement
+                            (return_statement
+                                value: (number)))
+                        alternative: (block_statement
+                            (expression_statement
+                                (if_expression
+                                    condition: (binary_expression
+                                        left: (identifier)
+                                        right: (number))
+                                    consequence: (block_statement
+                                        (return_statement
+                                            value: (number)))
+                                    alternative: (block_statement
+                                        (expression_statement
+                                            (binary_expression
+                                                left: (call_expression
+                                                    function: (identifier)
+                                                    arguments: (argument_list
+                                                        (binary_expression
+                                                            left: (identifier)
+                                                            right: (number))))
+                                                right: (call_expression
+                                                    function: (identifier)
+                                                    arguments: (argument_list
+                                                        (binary_expression
+                                                            left: (identifier)
+                                                            right: (number)))))))))))))))
+        (expression_statement
+            (call_expression
+                function: (identifier)
+                arguments: (argument_list
+                    (number)))))
+

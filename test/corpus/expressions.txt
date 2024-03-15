@@ -231,3 +231,19 @@ fn(x, y) {
                     right: (number)))
             right: (number)))
     )
+
+====
+If expression no else
+====
+if (true) {
+    return 0;
+}
+
+----
+(source_file
+    (expression_statement
+        (if_expression
+            condition: (true)
+            consequence: (block_statement
+                (return_statement
+                    value: (number))))))
