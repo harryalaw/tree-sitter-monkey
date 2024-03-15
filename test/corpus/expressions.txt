@@ -5,9 +5,29 @@ Prefix
 -5
 !true
 !false
+!!!false
 
 -----
-(source_file)
+(source_file
+    (expression_statement
+        (prefix_expression
+            operand: (number))
+    )
+    (expression_statement
+        (prefix_expression
+            operand: (true))
+    )
+    (expression_statement
+        (prefix_expression
+            operand: (false))
+    )
+    (expression_statement
+        (prefix_expression
+            operand: (prefix_expression
+                operand: (prefix_expression
+                    operand: (false))))
+    )
+)
         
 
 ======
@@ -19,7 +39,24 @@ Binary operations / infix
 5 * 5
 
 ----
-(source_file)
+(source_file
+    (expression_statement
+        (binary_expression
+            left: (number)
+            right: (number)))
+    (expression_statement
+        (binary_expression
+            left: (number)
+            right: (number)))
+    (expression_statement
+        (binary_expression
+            left: (number)
+            right: (number)))
+    (expression_statement
+        (binary_expression
+            left: (number)
+            right: (number)))
+)
 
 
 =====
@@ -31,18 +68,75 @@ foo < bar
 foo > bar
 
 -----
-(source_file)
+(source_file
+    (expression_statement
+        (binary_expression
+            left: (identifier)
+            right: (identifier)))
+    (expression_statement
+        (binary_expression
+            left: (identifier)
+            right: (identifier)))
+    (expression_statement
+        (binary_expression
+            left: (identifier)
+            right: (identifier)))
+    (expression_statement
+        (binary_expression
+            left: (identifier)
+            right: (identifier)))
+
+)
 
 
 ====
 Call expressions
 ====
+foo();
 add(2, 3)
 add(add(2,3), add(5,10))
 max(5, add(5, (5 * 5)))
 
 -----
-(source_file)
+(source_file
+    (expression_statement
+        (call_expression
+            function: (identifier)
+            arguments: (argument_list)))
+    (expression_statement
+        (call_expression
+            function: (identifier)
+            arguments: (argument_list
+                (number)
+                (number))))
+    (expression_statement
+        (call_expression
+            function: (identifier)
+            arguments: (argument_list
+                (call_expression
+                    function: (identifier)
+                    arguments: (argument_list
+                        (number)
+                        (number)))
+                (call_expression
+                    function: (identifier)
+                    arguments: (argument_list
+                        (number)
+                        (number))))))
+    (expression_statement
+        (call_expression
+            function: (identifier)
+            arguments: (argument_list
+                (number)
+                (call_expression
+                    function: (identifier)
+                    arguments: (argument_list
+                        (number)
+                        (parenthesized_expression
+                            (binary_expression
+                                left: (number)
+                                right: (number))))))))
+)
 
 
 =====
@@ -54,7 +148,20 @@ add(foo, bar)
 
 
 ----
-(source_file)
+(source_file
+    (expression_statement
+        (binary_expression
+            left: (binary_expression
+                left: (identifier)
+                right: (identifier))
+            right: (identifier)))
+    (expression_statement
+        (call_expression
+            function: (identifier)
+            arguments: (argument_list
+                (identifier)
+                (identifier))))
+)
 
 =====
 Functions as expressions
@@ -64,17 +171,63 @@ let add = fn(x,y) {
 };
 
 ----
-(source_file)
+(source_file
+    (let_statement
+        name: (identifier)
+        value: (function_literal
+            parameters: (parameter_list
+                (parameter_declaration
+                    name: (identifier))
+                (parameter_declaration
+                    name: (identifier)))
+            body: (block_statement
+                    (return_statement
+                        value: (binary_expression
+                            left: (identifier)
+                            right: (identifier)))))))
 
 
 =====
-Function literals as identifiers
+Immediately invoked function
 =====
 
 fn(x, y) {
     return x + y;
-}(5, 5)
-(fn(x) { return x}(5) + 10) * 10
+}(5, 5);
+(fn(x) { return x}(5) + 10) * 10;
 
 -----
-(source_file)
+(source_file
+    (expression_statement
+        (call_expression
+            function: (function_literal
+                parameters: (parameter_list
+                    (parameter_declaration
+                        name: (identifier))
+                    (parameter_declaration
+                        name: (identifier)))
+                body: (block_statement
+                    (return_statement
+                        value: (binary_expression
+                            left: (identifier)
+                            right: (identifier)))))
+            arguments: (argument_list
+                (number)
+                (number))))
+    (expression_statement
+        (binary_expression
+            left: (parenthesized_expression
+                (binary_expression
+                    left: (call_expression
+                        function: (function_literal
+                            parameters: (parameter_list
+                                (parameter_declaration
+                                    name: (identifier)))
+                            body: (block_statement
+                                (return_statement
+                                    value: (identifier))))
+                        arguments: (argument_list
+                            (number)))
+                    right: (number)))
+            right: (number)))
+    )

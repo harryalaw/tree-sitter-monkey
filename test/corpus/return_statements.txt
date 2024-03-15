@@ -9,9 +9,9 @@ return 993322;
 ----
 (source_file
     (return_statement
-        Value: (number))
+        value: (number))
     (return_statement
-        Value: (number))
+        value: (number))
     (return_statement
-        Value: (number)))
+        value: (number)))
 
