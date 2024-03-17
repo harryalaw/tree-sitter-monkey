@@ -52,6 +52,10 @@
           "named": true
         },
         {
+          "type": "string",
+          "named": true
+        },
+        {
           "type": "true",
           "named": true
         }
@@ -111,6 +115,10 @@
           "named": true
         },
         {
+          "type": "string",
+          "named": true
+        },
+        {
           "type": "true",
           "named": true
         }
@@ -167,6 +175,10 @@
           },
           {
             "type": "prefix_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -270,6 +282,10 @@
             "named": true
           },
           {
+            "type": "string",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           }
@@ -363,6 +379,10 @@
             "named": true
           },
           {
+            "type": "string",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           }
@@ -420,6 +440,10 @@
         },
         {
           "type": "prefix_expression",
+          "named": true
+        },
+        {
+          "type": "string",
           "named": true
         },
         {
@@ -518,6 +542,10 @@
             "named": true
           },
           {
+            "type": "string",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           }
@@ -588,6 +616,10 @@
             "named": true
           },
           {
+            "type": "string",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           }
@@ -639,6 +671,10 @@
           },
           {
             "type": "prefix_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -709,6 +745,10 @@
           },
           {
             "type": "prefix_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -803,6 +843,10 @@
           "named": true
         },
         {
+          "type": "string",
+          "named": true
+        },
+        {
           "type": "true",
           "named": true
         }
@@ -859,6 +903,10 @@
           },
           {
             "type": "prefix_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -940,6 +988,10 @@
             "named": true
           },
           {
+            "type": "string",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           }
@@ -969,6 +1021,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "\u0000",

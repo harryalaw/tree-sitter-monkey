@@ -4,6 +4,7 @@ Let statements
 
 let five = 5;
 let ten = 10;
+let foo = "hello";
 
 ---
 
@@ -13,7 +14,10 @@ let ten = 10;
         value: (number))
     (let_statement
         name: (identifier)
-        value: (number)))
+        value: (number))
+    (let_statement
+        name: (identifier)
+        value: (string)))
 
 
 ====================
