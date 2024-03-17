@@ -34,7 +34,7 @@ function commaSep(rule) {
 }
 
 newline = '\n';
-terminator = choice(newline, ';')
+terminator = choice(newline, ';', '\0')
 
 module.exports = grammar({
     name: 'monkey',
@@ -77,6 +77,8 @@ module.exports = grammar({
             $.false,
             $.if_expression,
             $.parenthesized_expression,
+            $.array_expression,
+            $.index_expression,
         ),
 
         if_expression: ($) => seq(
@@ -105,7 +107,7 @@ module.exports = grammar({
                     field('right', $._expression)),
             ),
             prec.left(
-                PREC.SUM,
+                PREC.PRODUCT,
                 seq(
                     field('left', $._expression),
                     field('operator', choice('*', '/')),
@@ -175,6 +177,19 @@ module.exports = grammar({
             '(',
             $._expression,
             ')'),
+
+        array_expression: ($) => seq(
+            '[',
+            commaSep($._expression),
+            ']',
+        ),
+        index_expression: ($) => prec(PREC.INDEX, seq(
+            field('operand', $._expression),
+            '[',
+            field('index', $._expression),
+            ']',
+        )),
+
 
         true: ($) => 'true',
         false: ($) => 'false',
