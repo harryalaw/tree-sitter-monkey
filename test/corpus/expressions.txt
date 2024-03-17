@@ -194,7 +194,7 @@ Immediately invoked function
 fn(x, y) {
     return x + y;
 }(5, 5);
-(fn(x) { return x}(5) + 10) * 10;
+(fn(x) { return x }(5) + 10) * 10;
 
 -----
 (source_file

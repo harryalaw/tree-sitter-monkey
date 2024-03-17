@@ -33,21 +33,21 @@ function commaSep(rule) {
     return optional(commaSep1(rule));
 }
 
+newline = '\n';
+terminator = choice(newline, ';')
+
 module.exports = grammar({
     name: 'monkey',
 
     rules: {
         // TODO: add the actual grammar rules
-        source_file: ($) => repeat($._statement),
+        source_file: ($) => repeat(seq($._statement, terminator)),
 
         _statement: ($) =>
-            seq(
-                choice(
-                    $.let_statement,
-                    $.return_statement,
-                    $.expression_statement
-                ),
-                optional(';')
+            choice(
+                $.let_statement,
+                $.return_statement,
+                $.expression_statement
             ),
 
         let_statement: ($) =>
@@ -75,8 +75,8 @@ module.exports = grammar({
             $.function_literal,
             $.true,
             $.false,
-            $.parenthesized_expression,
             $.if_expression,
+            $.parenthesized_expression,
         ),
 
         if_expression: ($) => seq(
@@ -137,8 +137,14 @@ module.exports = grammar({
         ),
 
         block_statement: ($) => seq('{',
-            optional(repeat($._statement)),
+            optional($._statement_list),
             '}',
+        ),
+
+        _statement_list: ($) => seq(
+            $._statement,
+            repeat(seq(terminator, $._statement)),
+            optional(terminator),
         ),
 
         function_literal: $ =>

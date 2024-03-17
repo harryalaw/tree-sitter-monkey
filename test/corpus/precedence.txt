@@ -1,0 +1,38 @@
+====
+Simple arithmetic
+====
+-a * b
+((-a) * b)
+
+----
+(source_file
+    (expression_statement
+        (binary_expression
+            left: (prefix_expression
+                    operand: (identifier))
+            right: (identifier)))
+    (expression_statement
+        (parenthesized_expression
+            (binary_expression
+                left: (parenthesized_expression
+                         (prefix_expression
+                            operand: (identifier)))
+                right: (identifier)))))
+====
+Multiple prefix expressions
+====
+!-a
+(!(-a))
+
+----
+(source_file
+    (expression_statement
+        (prefix_expression
+            (prefix_expression
+                (identifier))))
+    (expression_statement
+        (parenthesized_expression
+            (prefix_expression
+                (parenthesized_expression
+                    (prefix_expression
+                        (identifier)))))))
