@@ -28,6 +28,10 @@
           "named": true
         },
         {
+          "type": "hash_expression",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -91,6 +95,10 @@
           "named": true
         },
         {
+          "type": "hash_expression",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -151,6 +159,10 @@
           },
           {
             "type": "function_literal",
+            "named": true
+          },
+          {
+            "type": "hash_expression",
             "named": true
           },
           {
@@ -258,6 +270,10 @@
             "named": true
           },
           {
+            "type": "hash_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -355,6 +371,10 @@
             "named": true
           },
           {
+            "type": "hash_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -419,6 +439,10 @@
           "named": true
         },
         {
+          "type": "hash_expression",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -480,6 +504,151 @@
     }
   },
   {
+    "type": "hash_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "hash_item",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "hash_item",
+    "named": true,
+    "fields": {
+      "key": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "function_literal",
+            "named": true
+          },
+          {
+            "type": "hash_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "index_expression",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "prefix_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "function_literal",
+            "named": true
+          },
+          {
+            "type": "hash_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_expression",
+            "named": true
+          },
+          {
+            "type": "index_expression",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "prefix_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "if_expression",
     "named": true,
     "fields": {
@@ -515,6 +684,10 @@
           },
           {
             "type": "function_literal",
+            "named": true
+          },
+          {
+            "type": "hash_expression",
             "named": true
           },
           {
@@ -592,6 +765,10 @@
             "named": true
           },
           {
+            "type": "hash_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -647,6 +824,10 @@
           },
           {
             "type": "function_literal",
+            "named": true
+          },
+          {
+            "type": "hash_expression",
             "named": true
           },
           {
@@ -721,6 +902,10 @@
           },
           {
             "type": "function_literal",
+            "named": true
+          },
+          {
+            "type": "hash_expression",
             "named": true
           },
           {
@@ -819,6 +1004,10 @@
           "named": true
         },
         {
+          "type": "hash_expression",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -879,6 +1068,10 @@
           },
           {
             "type": "function_literal",
+            "named": true
+          },
+          {
+            "type": "hash_expression",
             "named": true
           },
           {
@@ -961,6 +1154,10 @@
           },
           {
             "type": "function_literal",
+            "named": true
+          },
+          {
+            "type": "hash_expression",
             "named": true
           },
           {
@@ -1073,6 +1270,10 @@
   },
   {
     "type": "/",
+    "named": false
+  },
+  {
+    "type": ":",
     "named": false
   },
   {

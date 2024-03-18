@@ -1,0 +1,95 @@
+===
+HashMap simple key value
+===
+let foo = {"one": 1};
+---
+(source_file
+    (let_statement
+        name: (identifier)
+        value: (hash_expression
+            (hash_item
+                key: (string)
+                value: (number)))))
+===
+Hashmap declaration with string keys
+===
+{"one": 0 + 1, "two": 10 - 8, "three": 15 / 5};
+---
+(source_file
+    (expression_statement
+        (hash_expression
+            (hash_item
+                key: (string)
+                value: (binary_expression
+                    left: (number)
+                    right: (number)))
+            (hash_item
+                key: (string)
+                value: (binary_expression
+                    left: (number)
+                    right: (number)))
+            (hash_item
+                key: (string)
+                value: (binary_expression
+                    left: (number)
+                    right: (number))))))
+===
+Empty hash literal
+===
+{}
+---
+(source_file
+    (expression_statement
+        (hash_expression)))
+===
+Numeric keys
+===
+{1: 1, 2: 2, 3: 3}
+---
+(source_file
+    (expression_statement
+        (hash_expression
+            (hash_item
+                key: (number)
+                value: (number))
+            (hash_item
+                key: (number)
+                value: (number))
+            (hash_item
+                key: (number)
+                value: (number)))))
+
+===
+Boolean keys
+===
+{true: 1, false: 2}
+---
+(source_file
+    (expression_statement
+        (hash_expression
+            (hash_item
+                key: (true)
+                value: (number))
+            (hash_item
+                key: (false)
+                value: (number)))))
+
+===
+Expression as key
+===
+{10+2: 3, 1 > 5: "four"}
+---
+(source_file
+    (expression_statement
+        (hash_expression
+            (hash_item
+                key: (binary_expression
+                    left: (number)
+                    right: (number))
+                value: (number))
+            (hash_item
+                key: (binary_expression
+                    left: (number)
+                    right: (number))
+                value: (string)))))
+

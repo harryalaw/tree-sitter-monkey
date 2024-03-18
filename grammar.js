@@ -80,6 +80,7 @@ module.exports = grammar({
             $.parenthesized_expression,
             $.array_expression,
             $.index_expression,
+            $.hash_expression,
         ),
 
         if_expression: ($) => seq(
@@ -191,6 +192,17 @@ module.exports = grammar({
             ']',
         )),
 
+        hash_expression: ($) => seq(
+            '{',
+            commaSep($.hash_item),
+            '}'
+        ),
+
+        hash_item: ($) => seq(
+            field('key', $._expression),
+            ':',
+            field('value', $._expression),
+        ),
 
         true: ($) => 'true',
         false: ($) => 'false',
