@@ -11,9 +11,21 @@
     "nan": "^2.12.1"
   },
   "devDependencies": {
+    "prettier": "^3.2.5",
     "tree-sitter-cli": "^0.20.8"
   },
   "scripts": {
     "test": "tree-sitter test"
-  }
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.monkey",
+      "file-types": [
+        "monkey"
+      ],
+      "highlights": [
+        "queries/highlight.scm"
+      ]
+    }
+  ]
 }
